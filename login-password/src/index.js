@@ -4,7 +4,7 @@ import Redis from "ioredis"
 const app = express()
 app.use(express.json())
 
-const redis = new Redis()
+const redis = new Redis("redis://localhost:6379")
 
 function otpKey(phone) {
     return `otp:${phone}`
