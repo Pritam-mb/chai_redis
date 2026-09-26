@@ -44,6 +44,7 @@ app.post("/leaderboard/:userId/increase", async (req, res) => {
         score,
         userId
     );
+    console.log("New Score:", userId, newScore);
     const data = await redis.zrevrange(
         "leaderboard",
         0,
